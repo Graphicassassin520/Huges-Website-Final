@@ -1,0 +1,260 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Navigation */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo a {
+  text-decoration: none;
+  font-size: 1.5em;
+  color: #FF8200;
+  font-weight: bold;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+}
+
+.nav li {
+  margin-left: 20px;
+}
+
+.nav li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  height: 3px;
+  width: 25px;
+  background-color: #FF8200;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url("https://images.unsplash.com/photo-1600880292217-6fd8ad39bb28?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80")
+    no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  background: #FF8200;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #e57300;
+}
+
+/* Services Section */
+.services {
+  padding: 60px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.services h2 {
+  margin-bottom: 40px;
+  font-size: 2em;
+  color: #FF8200;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service {
+  background: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.service img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.service h3 {
+  margin-top: 15px;
+  color: #333;
+}
+
+/* FAQ Section */
+.faq {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.faq h2 {
+  margin-bottom: 40px;
+  font-size: 2em;
+  color: #FF8200;
+}
+
+.faq-item {
+  max-width: 800px;
+  margin: 0 auto 20px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+  cursor: pointer;
+}
+
+.faq-question {
+  font-weight: bold;
+  position: relative;
+  padding-right: 20px;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  margin-top: 0;
+  color: #555;
+}
+
+/* When active, expand the answer */
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  margin-top: 10px;
+}
+
+/* Contact Section */
+.contact {
+  padding: 60px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.contact h2 {
+  margin-bottom: 40px;
+  font-size: 2em;
+  color: #FF8200;
+}
+
+#contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#contact-form input,
+#contact-form textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+#contact-form button {
+  padding: 10px;
+  background: #FF8200;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#contact-form button:hover {
+  background: #e57300;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    display: none;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .nav li {
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
